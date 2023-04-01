@@ -19,6 +19,13 @@ body {
   transform: translate(-50%, 0%);
 }
 
+@media only screen and (max-width: 767px) {
+  .container {
+    width: 90%;
+    left: 5%;
+  }
+}
+
 .box {
   min-width: 400px;
   background: #fafafa;
@@ -39,6 +46,13 @@ body {
   box-shadow: 0px 0px 166px -31px rgba(0, 0, 0, 0.15);
   border-radius: 60px;
   z-index: -1;
+}
+
+@media only screen and (max-width: 767px) {
+  .box {
+    min-width: 90%;
+    margin-bottom: 50px;
+  }
 }
 
 h1 {
@@ -119,4 +133,35 @@ button#calculate:hover {
 #comment {
   color: #4f7df9;
   font-weight: 800;
+}
+
+@media only screen and (max-width: 767px) {
+  h1 {
+    font-size: 28px;
+    padding: 20px 0;
+  }
+  .content {
+    padding: 0 20px;
+  }
+  .input input {
+    font-size: 24px;
+  }
+  button#calculate {
+    font-size: 14px;
+    padding: 10px 0;
+    border-radius: 8px;
+  }
+  .result p {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .result #result {
+    font-size: 28px;
+    padding: 5px 10px;
+    border-radius: 35px;
+    margin-bottom: 15px;
+  }
+  #comment {
+    font-size: 16px;
+  }
 }
