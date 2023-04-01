@@ -9,8 +9,6 @@ btn.addEventListener('click', function () {
     return;
   }
 
-  // BMI = weight in KG / (height in m * height in m)
-
   height = height / 100;
 
   let BMI = weight / (height * height);
@@ -23,14 +21,11 @@ btn.addEventListener('click', function () {
 
   if (BMI < 18.5) {
     status = 'Underweight 😒';
-  }
-  if (BMI >= 18.5 && BMI < 25) {
+  } else if (BMI >= 18.5 && BMI < 24.9) {
     status = 'Normal Weight 😍';
-  }
-  if (BMI >= 25 && BMI < 30) {
+  } else if (BMI >= 25 && BMI < 29.9) {
     status = 'Overweight 😮';
-  }
-  if (BMI >= 30) {
+  } else if (BMI >= 30) {
     status = 'Obese 😱';
   }
   document.querySelector(
