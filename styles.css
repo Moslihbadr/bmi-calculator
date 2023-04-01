@@ -21,8 +21,8 @@ body {
 
 @media only screen and (max-width: 767px) {
   .container {
+    top: 5%;
     width: 90%;
-    left: 50%;
   }
 }
 
