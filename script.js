@@ -1,34 +1,35 @@
-const btn = document.getElementById('calculate');
+const calculateBtn = document.getElementById('calculate');
+const heightInput = document.querySelector('#height');
+const weightInput = document.querySelector('#weight');
+const resultOutput = document.querySelector('#result');
+const commentOutput = document.querySelector('.comment');
 
-btn.addEventListener('click', function () {
-  let height = document.querySelector('#height').value;
-  let weight = document.querySelector('#weight').value;
+calculateBtn.addEventListener('click', function () {
+  const heightValue = Number(heightInput.value);
+  const weightValue = Number(weightInput.value);
 
-  if (height == '' || weight == '') {
-    alert('Please fill out the input fields!');
+  if (isNaN(heightValue) || isNaN(weightValue)) {
+    alert('Please enter valid height and weight values!');
     return;
   }
 
-  height = height / 100;
+  const heightInMeters = heightValue / 100;
+  const bmiValue = weightValue / (heightInMeters * heightInMeters);
+  const roundedBmiValue = bmiValue.toFixed(2);
 
-  let BMI = weight / (height * height);
-
-  BMI = BMI.toFixed(2);
-
-  document.querySelector('#result').innerHTML = BMI;
+  resultOutput.innerHTML = roundedBmiValue;
 
   let status = '';
 
-  if (BMI < 18.5) {
+  if (bmiValue < 18.5) {
     status = 'Underweight 😒';
-  } else if (BMI >= 18.5 && BMI < 24.9) {
+  } else if (bmiValue < 25) {
     status = 'Normal Weight 😍';
-  } else if (BMI >= 25 && BMI < 29.9) {
+  } else if (bmiValue < 30) {
     status = 'Overweight 😮';
-  } else if (BMI >= 30) {
+  } else {
     status = 'Obese 😱';
   }
-  document.querySelector(
-    '.comment',
-  ).innerHTML = `Comment: you are <span id="comment">${status}</span>`;
+
+  commentOutput.innerHTML = `Comment: you are <span id="comment">${status}</span>`;
 });
