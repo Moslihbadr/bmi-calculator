@@ -5,6 +5,9 @@ This is a simple web app that calculates a user's Body Mass Index (BMI) based on
 ## Getting Started
 
 To use the app, simply enter your height and weight in the input fields provided, and click the "Calculate" button. The app will display your calculated BMI result and provide feedback on your weight status.
+You can access the app online at https://viktorsvertoka.github.io/bmi-calculator/.
+
+
 
 ## Installation
 
